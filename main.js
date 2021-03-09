@@ -11,9 +11,22 @@
 var bombsArray = [];
 console.log(bombsArray);
 var numeriSafe = [];
-var maxNum = 100;
+// var maxNum = 100;
 
+var difficulty = parseInt(prompt('Imposta la difficoltà, premi 0 per facile, 1 per medio, 2 per difficile'))
+switch (difficulty) {
+  case 0:
+  var maxNum = 100;
+    break;
+  case 1:
+  var maxNum = 80;
+    break;
+  case 2:
+  var maxNum = 50;
+    break;
+  default:
 
+}
 
 
 
