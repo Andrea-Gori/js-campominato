@@ -11,21 +11,27 @@
 var bombsArray = [];
 console.log(bombsArray);
 var numeriSafe = [];
-// var maxNum = 100;
 
-var difficulty = parseInt(prompt('Imposta la difficoltà, premi 0 per facile, 1 per medio, 2 per difficile'))
-switch (difficulty) {
-  case 0:
-  var maxNum = 100;
-    break;
-  case 1:
-  var maxNum = 80;
-    break;
-  case 2:
-  var maxNum = 50;
-    break;
-  default:
+var nonSelezionato = true;
+while (nonSelezionato) {
+  var difficulty = parseInt(prompt('Imposta la difficoltà, premi 0 per facile, 1 per medio, 2 per difficile'))
 
+  nonSelezionato = false ;
+  switch (difficulty) {
+    case 0:
+    var maxNum = 100;
+      break;
+    case 1:
+    var maxNum = 80;
+      break;
+    case 2:
+    var maxNum = 50;
+      break;
+    default:
+    nonSelezionato = true;
+      break;
+
+  }
 }
 
 
@@ -60,7 +66,7 @@ function gioco(bombsArray, numeriSafe, maxNum) {
   while (numeriSafe.length < maxNum - 16) {
     var selezioneUtente = parseInt(prompt('Scrivi un numero, attento a non esplodere: '));
 
-    if (!isNaN(selezioneUtente) && 1 <= selezioneUtente && selezioneUtente <= 100 && !numeriSafe.includes(selezioneUtente) ) {
+    if (!isNaN(selezioneUtente) && 1 <= selezioneUtente && selezioneUtente <= maxNum && !numeriSafe.includes(selezioneUtente) ) {
       if (!bombsArray.includes(selezioneUtente)) {
         numeriSafe.push(selezioneUtente);
         console.log(selezioneUtente);
